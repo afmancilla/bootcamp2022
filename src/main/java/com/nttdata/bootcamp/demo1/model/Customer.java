@@ -32,6 +32,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Slf4j
+@Document(collection = "customer")
 public class Customer {
 
   @Id
