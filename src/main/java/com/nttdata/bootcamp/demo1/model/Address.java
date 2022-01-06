@@ -1,17 +1,14 @@
 package com.nttdata.bootcamp.demo1.model;
 
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * [Description]. <br/>
- * <b>Class</b>: {@link Customer}<br/>
+ * <b>Class</b>: {@link Address}<br/>
  * <b>Copyright</b>: &Copy; 2021 Everis Per&uacute;. <br/>
  * <b>Company</b>: Everis del Per&uacute;. <br/>
  *
@@ -26,20 +23,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * </ul>
  * @version 1.0
  */
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Slf4j
-public class Customer {
-
-  @Id
-  private String id = UUID.randomUUID().toString();
-  private String firstname;
-  private String lastname;
-  private String email;
-  private String username;
-  private Address address;
-
+@Document(collection = "customer")
+public class Address {
+  private int number;
+  private String street;
+  private String city;
+  private String country;
 }

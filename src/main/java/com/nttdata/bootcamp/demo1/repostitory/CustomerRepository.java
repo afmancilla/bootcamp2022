@@ -1,8 +1,9 @@
 package com.nttdata.bootcamp.demo1.repostitory;
 
 import com.nttdata.bootcamp.demo1.model.Customer;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 /**
  * [Description]. <br/>
@@ -21,17 +22,10 @@ import reactor.core.publisher.Mono;
  * </ul>
  * @version 1.0
  */
-public interface CustomerRepository {
+@Repository
+public interface CustomerRepository
+    extends ReactiveMongoRepository<Customer,String> {
 
-  Mono<Void> create(Customer customer);
+  Flux<Customer> findCustomerByAddress_Country(String country);
 
-  Mono<Customer> findById(String customerId);
-
-  Flux<Customer> findAll();
-
-  Mono<Customer> update(Customer customer);
-
-  Mono<Customer> change(Customer customer);
-
-  Mono<Void> remove(String customerId);
 }
