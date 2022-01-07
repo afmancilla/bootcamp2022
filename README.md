@@ -7,6 +7,10 @@
 *  Manejo de trazas con Logback.
 *  Uso de lombok.
 
+##Session 02
+*  Spring Data JPA.
+*  Mongo Reactivo.
+
 ##Prerequisites
 
 What things you need to install the software and how to install them
