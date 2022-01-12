@@ -44,6 +44,12 @@ public class CustomerController {
   @Autowired
   private CustomerService customerService;
 
+  @GetMapping("/api/saludo")
+  public String getSaludo() {
+    log.info("byId>>>>>");
+    return "Hola desde aks";
+  }
+  
   @GetMapping("/api/users/{id}")
   public Flux<User> getUser(@PathVariable("id") String id) {
     log.info("byId>>>>>");
