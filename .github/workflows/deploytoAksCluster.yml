@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/." -f  "Dockerfile" -t acrbootcamp2022.azurecr.io/bootcampakscluster:${{ github.sha }} --label dockerfile-path=Dockerfile
+        docker build "$GITHUB_WORKSPACE/." -t acrbootcamp2022.azurecr.io/bootcampakscluster:${{ github.sha }}
         docker push acrbootcamp2022.azurecr.io/bootcampakscluster:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
