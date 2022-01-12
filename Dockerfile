@@ -1,11 +1,9 @@
-FROM openjdk:11 as build
-COPY . /usr/app
-WORKDIR /usr/app
+FROM openjdk:11
+COPY . /project
+WORKDIR /project
 RUN chmod +x mvnw \
     && ./mvnw --version \
     && ./mvnw clean package
-
-FROM openjdk:11
-COPY --from=build /usr/app/target/*.jar app.jar
+    && cp ./target/demo1-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
