@@ -10,7 +10,21 @@
 ##Session 02
 *  Spring Data JPA.
 *  Mongo Reactivo.
+
 ##Session 03
+*  Patrones de diseño en microservicios.
+*  Mongo Reactivo.
+
+##Session 04
+*  Antipatrones de desarrollo en Microservicios.
+*  Contenedores Docker.
+
+##Session 05
+*  Checkstyle.
+*  Metricas de calidad con SonarQube.
+*  Pruebas Unitarias con Junit5, Mockito, Mockwebserver
+
+
 ##Prerequisites
 
 What things you need to install the software and how to install them
@@ -51,6 +65,38 @@ curl --request GET 'localhost:9002/api/customer'
 ```
 curl --request GET 'localhost:9002/actuator'
 ```
+
+
+## Running the tests
+
+Para la ejecución de los test ejecutamos el siguiente comando.
+para el gestor dependencias Maven.
+```
+mvn test
+```
+para el gestor dependencias Gradle.
+```
+gradle test
+```
+
+## Para valuación de codigo fuente localmente
+* checkstyle
+* pmd
+* spotbugs
+* jacoco
+
+
+* [CheckStyle](https://checkstyle.sourceforge.io/) - Para los estilos de código.
+* [Spotbugs](https://spotbugs.github.io/) - Para el análisis estático de código.
+* [PMD](https://pmd.github.io/) - Para el análisis estático de código.
+
+Para invocar el análisis de código estático.
+
+Maven:
+```
+mvn compile test site
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
