@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM adoptopenjdk/openjdk11:latest
 COPY . /project
 WORKDIR /project
 RUN chmod +x mvnw \
