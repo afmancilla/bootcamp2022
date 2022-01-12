@@ -1,6 +1,11 @@
+FROM openjdk:11 as build
+COPY . /usr/app
+WORKDIR /usr/app
+RUN chmod +x mvnw \
+    && ./mvnw --version \
+    && ./mvnw clean package
+
 FROM openjdk:11
-VOLUME /tmp
+COPY --from=build /usr/app/target/*.jar app.jar
 EXPOSE 8080
-ARG JAR_FILE=target/demo1-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
