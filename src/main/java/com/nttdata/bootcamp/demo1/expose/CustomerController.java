@@ -47,7 +47,7 @@ public class CustomerController {
   @GetMapping("/api/saludo")
   public String getSaludo() {
     log.info("byId>>>>>");
-    return "Hola desde aks";
+    return "Hola desde kubernetes 2022";
   }
   
   @GetMapping("/api/users/{id}")
